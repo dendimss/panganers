@@ -4,121 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Pertanian Indonesia</title>
+    <title>Login - Dashboard Pertanian</title>
 
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-        }
-
-        /* LOGIN PAGE */
-
-        #loginPage {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #2e7d32, #1b5e20);
-        }
-
-        .login-box {
-            background: white;
-            padding: 40px;
-            width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-
-        .login-box h1 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-
-        .login-box p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .login-box input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-
-        .login-box button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            background: #2e7d32;
-            color: white;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .login-box button:hover {
-            background: #1b5e20;
-        }
-
-        .error {
-            color: red;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        /* DASHBOARD */
-
-        #dashboardPage {
-            display: none;
-            width: 100%;
-            height: 100vh;
-        }
-
-        header {
-            background-color: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: calc(100vh - 45px);
-            overflow: hidden;
-        }
-
-        iframe {
-            position: absolute;
-            top: -30px;
-            left: 0;
-            width: 100%;
-            height: calc(100% + 120px);
-            border: none;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- LOGIN PAGE -->
 
     <div id="loginPage">
 
@@ -140,47 +31,7 @@
 
     </div>
 
-    <!-- DASHBOARD PAGE -->
-
-    <div id="dashboardPage">
-
-        <header>
-            Dashboard Pertanian Indonesia
-        </header>
-
-        <div class="iframe-container">
-
-            <iframe
-                title="Project Database Pertanian"
-                src="https://app.fabric.microsoft.com/view?r=eyJrIjoiOWZiYWUyMjMtNTE1MS00NGVjLWE0NzUtYTVkOTY0NzFkYjE0IiwidCI6ImJkNGJkY2ExLTIyNzctNDE3ZS05MGI0LTZkOTZkMDQxMWUyOCJ9&chromeless=true"
-                allowfullscreen>
-            </iframe>
-
-        </div>
-
-    </div>
-
-    <script>
-
-        function login() {
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            if(username === "dendims" && password === "swasembada") {
-
-                document.getElementById("loginPage").style.display = "none";
-                document.getElementById("dashboardPage").style.display = "block";
-
-            } else {
-
-                document.getElementById("errorMessage").innerText = "Username atau password salah!";
-
-            }
-
-        }
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
