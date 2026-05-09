@@ -1,17 +1,10 @@
-/*
 const SUPABASE_URL = "https://eqyagkxpojaffrflvice.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxeWFna3hwb2phZmZyZmx2aWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMTk3OTUsImV4cCI6MjA5Mzg5NTc5NX0.pgWSj4M6nueT9BCPOX--1KuVoPzWnbZ30Pc8InFhDO8";
+const SUPABASE_KEY = "sb_publishable_WP-KLksL6oIksMNszZCdrA_sYWQG2AT";
 
 const supabaseClient = supabase.createClient (
     SUPABASE_URL,
     SUPABASE_KEY
 );
-*/
-
-import { createClient } from '@supabase/supabase-js'
-const supabaseUrl = 'https://eqyagkxpojaffrflvice.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
 
 /* LOGIN */
 
