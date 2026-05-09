@@ -1,16 +1,28 @@
-const USERNAME = "dendims";
-const PASSWORD = "swasembada";
+const SUPABASE_URL = "https://eqyagkxpojaffrflvice.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxeWFna3hwb2phZmZyZmx2aWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMTk3OTUsImV4cCI6MjA5Mzg5NTc5NX0.pgWSj4M6nueT9BCPOX--1KuVoPzWnbZ30Pc8InFhDO8";
+
+const supabaseClient = supabase.createClient (
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 
 /* LOGIN */
 
-function login() {
+async function login() {
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if(username === USERNAME && password === PASSWORD) {
+    const { data, error } = await supabaseClient
+        .from("users")
+        .select("*")
+        .eq("username", username)
+        .eq("password", password);
+
+    if(data.length > 0) {
 
         sessionStorage.setItem("loggedIn", "true");
+        sessionStorage.setItem("username", username);
 
         window.location.href = "dashboard.html";
 
@@ -20,6 +32,22 @@ function login() {
             "Username atau password salah!";
 
     }
+
+}
+
+/* LOGIN DENGAN ENTER */
+
+if(document.getElementById("loginPage")) {
+
+    document.addEventListener("keydown", function(event) {
+
+        if(event.key === "Enter") {
+
+            login();
+
+        }
+
+    });
 
 }
 
