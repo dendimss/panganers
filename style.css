@@ -144,6 +144,6 @@ iframe {
     top: 0px;
     left: 0;
     width: 100%;
-    height: calc(100% + 120px);
+    height: calc(100% + 70px);
     border: none;
 }
